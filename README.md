@@ -66,7 +66,7 @@ In order to use the AWS provider in Terraform, you need to provide valid AWS acc
 
 Following commands are to be run in the container.
 
-**Note:** It is very important to run ```terraform destroy``` whilst container instance is running otherwise terraform state will not be known. Hence will have to manually identify and delete resources created from the container.
+**Note:** It is very important to run ```terraform destroy``` whilst container instance is running otherwise the Terraform state will not be known. Hence will have to manually identify and delete resources created from the container.
 
 ```bash
 terraform --version
