@@ -1,3 +1,4 @@
+awscli
 bugfixes
 changelog
 Changelog
@@ -31,6 +32,7 @@ Readme
 README
 spellingcheck
 superlinter
+Terraform
 TODO
 URLs
 username

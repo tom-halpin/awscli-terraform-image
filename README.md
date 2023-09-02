@@ -5,7 +5,6 @@ This is a repository for a Docker image with the the AWS Command Line Interface 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Bandit](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/bandit.yml/badge.svg)](https://github.com/tom-halpin/awscli-terraform-image/actions/new?category=security)
 [![Super-Linter](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/linter.yml/badge.svg)](https://github.com/marketplace/actions/super-linter)
-[![CodeQL](https://github.com/tom-halpin/awscli-terraform-image/workflows/CodeQL/badge.svg?branch=main)
 [![Markdown Links Check](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/md-links.yml/badge.svg)](https://github.com/gaurav-nelson/github-action-markdown-link-check)
 [![Spell-Checker](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/spellcheck.yaml/badge.svg)](https://github.com/rojopolis/spellcheck-github-actions)
 [![Docker-Build-Push](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/docker-build-push.yml/badge.svg)](https://hub.docker.com/)
@@ -18,13 +17,13 @@ In summary, this Dockerfile starts with the Ubuntu 20.04 base image, installs th
 
 Build the Docker image.
 
-```shell
+```bash
 docker build -t awscli-terraform-image .
 ```
 
 To verify build
 
-```shell
+```bash
 docker image ls -a
 ```
 
@@ -32,7 +31,7 @@ docker image ls -a
 
 Run the Docker image as a container.
 
-```shell
+```bash
 docker run -it awscli-terraform-image
 ```
 ## To pull and run an instance of the Docker image from Docker Hub
@@ -47,13 +46,13 @@ docker pull <dockerhub-username>/awscli-terraform-image:<tag>
 
 ### Run
 
-```shell
+```bash
 docker run -it <dockerhub-username>/awscli-terraform-image:<tag>
 ```
 
 **Note:** Replace <dockerhub-username> with your Docker Hub username and <tag> with the specific tag of the Docker image you want to pull.
 
-This will start a new container and drop you into a Bash shell inside it. From there, you can navigate to the /app directory and run Terraform commands manually. For example, you can run ```terraform init`````` by entering the command ```terraform init``` at the shell prompt.
+This will start a new container and drop you into a Bash shell inside it. From there, you can navigate to the /app directory and run Terraform commands manually. For example, you can run ```terraform init``` by entering the command ```terraform init``` at the shell prompt.
 
 #### AWS Credentials
 
