@@ -3,6 +3,7 @@ bugfixes
 changelog
 Changelog
 CHANGELOG
+CLI
 CodeQL
 codeowners
 CODEOWNERS
@@ -32,6 +33,7 @@ Readme
 README
 spellingcheck
 superlinter
+terraform
 Terraform
 TODO
 URLs
