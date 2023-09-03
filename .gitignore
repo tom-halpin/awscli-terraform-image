@@ -1,6 +1,7 @@
 # app specific files
 error.log
 run.sh
+rundocker.sh
 
 # app specific folders
 
