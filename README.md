@@ -9,7 +9,7 @@ This is a repository for a Docker image with the the AWS Command Line Interface 
 [![Spell-Checker](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/spellcheck.yaml/badge.svg)](https://github.com/rojopolis/spellcheck-github-actions)
 [![Docker-Build-Push](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/docker-build-push.yml/badge.svg)](https://hub.docker.com/)
 
-In summary, this Dockerfile starts with the Ubuntu 20.04 base image, installs the required packages for Terraform & the awscli, installs Terraform and the awscli and sets the working directory to /app.
+In summary, this Dockerfile starts with the latest Ubuntu base image, installs the required packages for Terraform & the awscli, installs Terraform and the awscli and sets the working directory to /app.
 
 ## To build and run an instance of a Docker image locally.
 
@@ -29,17 +29,22 @@ docker image ls -a
 
 ### Run
 
-Run the Docker image as a container.
+Run the Docker image locally as a container.
+
+In order to use the AWS provider in Terraform, you need to provide valid AWS access key, AWS secret key & AWS default region values via environment variables when running the Docker container, like so
 
 ```bash
-docker run -it awscli-terraform-image
+    docker run -it -e AWS_ACCESS_KEY_ID=<access_key> -e AWS_SECRET_ACCESS_KEY=<secret_key> -e AWS_DEFAULT_REGION=<default region> awscli-terraform-image /bin/bash
 ```
+
+This will start a new container and drop you into a Bash shell inside it. From there, you can navigate to the /app directory and run Terraform commands manually. For example, you can run ```terraform init``` by entering the command ```terraform init``` at the shell prompt.
+
 ## To pull and run an instance of the Docker image from Docker Hub
 
 ### Pull
 
 ```shell
-docker pull <dockerhub-username>/awscli-terraform-image:<tag>
+docker pull tomhalpin/awscli-terraform-image:latest
 ```
 
 **Note:** Replace <dockerhub-username> with your Docker Hub username and <tag> with the specific tag of the Docker image you want to pull.
@@ -47,24 +52,14 @@ docker pull <dockerhub-username>/awscli-terraform-image:<tag>
 ### Run
 
 ```bash
-docker run -it <dockerhub-username>/awscli-terraform-image:<tag>
+docker run -it -e AWS_ACCESS_KEY_ID=<access_key> -e AWS_SECRET_ACCESS_KEY=<secret_key> -e AWS_DEFAULT_REGION=<default region> tomhalpin/awscli-terraform-image:latest /bin/bash
 ```
 
-**Note:** Replace <dockerhub-username> with your Docker Hub username and <tag> with the specific tag of the Docker image you want to pull.
+**Note:** Replace <dockerhub-username> with your Docker Hub username and <tag> with the specific tag of the Docker image you want to pull. You also need to provide valid AWS access key, AWS secret key & AWS default region values via environment variables when running the Docker container
 
-This will start a new container and drop you into a Bash shell inside it. From there, you can navigate to the /app directory and run Terraform commands manually. For example, you can run ```terraform init``` by entering the command ```terraform init``` at the shell prompt.
+## Commands
 
-#### AWS Credentials
-
-In order to use the AWS provider in Terraform, you need to provide valid AWS access key, AWS secret key & AWS default region via environment variables when running the Docker container, like so
-
-```bash
-    docker run -it -e AWS_ACCESS_KEY_ID=<access_key> -e AWS_SECRET_ACCESS_KEY=<secret_key> -e AWS_DEFAULT_REGION=<default region> awscli-terraform-image /bin/bash
-```
-
-#### Commands
-
-Following commands are to be run in the container.
+Following basic commands are examples of what can be run in the container. Of course it is possible to add custom Terraform scripts to the image and run them.
 
 **Note:** It is very important to run ```terraform destroy``` whilst container instance is running otherwise the Terraform state will not be known. Hence will have to manually identify and delete resources created from the container.
 
