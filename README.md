@@ -11,7 +11,21 @@ This is a repository for a Docker image with the the AWS Command Line Interface 
 
 In summary, this Dockerfile starts with the latest Alpine base image, installs the required packages for Terraform & the awscli, installs Terraform and the awscli and then sets the working directory to /app.
 
-## To build and run an instance of a Docker image locally.
+## Instructions
+
+To use:
+
+- Clone the repository
+
+- Create two GitHub Action respository secrets ```DOCKERHUB_USERNAME``` & ```DOCKERHUB_PASSWORD```
+
+- Add your Terraform scripts to repository
+
+- Copy your Terraform scripts to app folder in the Dockerfile
+
+- Build, deploy & use your image.
+
+## To build and run an instance of a Docker image locally
 
 ### Build
 

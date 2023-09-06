@@ -27,7 +27,10 @@ ENV PATH="/root/.local/bin:$PATH"
 # Set the working directory to /app
 WORKDIR /app
 
-COPY entrypoint.sh /entrypoint.sh
+# Uncomment and specify the Terraform scripts to run for example
+# COPY main.tf /app
 
 # Define the command to run when the container starts
+COPY entrypoint.sh /entrypoint.sh
+
 CMD ["/bin/sh", "/entrypoint.sh"]
