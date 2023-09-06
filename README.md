@@ -1,6 +1,6 @@
 # awscli-terraform-image - README.md
 
-This is a repository for a Docker image with the the AWS Command Line Interface (CLI) and Terraform installed.
+This is a repository for a Docker image with the the AWS Command Line Interface (CLI) and latest version of Terraform available in the Alpine Linux package repository installed.
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Bandit](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/bandit.yml/badge.svg)](https://github.com/tom-halpin/awscli-terraform-image/actions/new?category=security)
@@ -11,7 +11,21 @@ This is a repository for a Docker image with the the AWS Command Line Interface 
 
 In summary, this Dockerfile starts with the latest Alpine base image, installs the required packages for Terraform & the awscli, installs Terraform and the awscli and then sets the working directory to /app.
 
-## To build and run an instance of a Docker image locally.
+## Instructions
+
+To use:
+
+- Clone the repository
+
+- Create two GitHub Action repository secrets ```DOCKERHUB_USERNAME``` & ```DOCKERHUB_PASSWORD```
+
+- Add your Terraform scripts to repository
+
+- Copy your Terraform scripts to app folder in the Dockerfile
+
+- Build, deploy & use your image.
+
+## To build and run an instance of a Docker image locally
 
 ### Build
 

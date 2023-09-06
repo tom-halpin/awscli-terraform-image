@@ -7,17 +7,13 @@ FROM alpine:latest
 # ENV AWS_DEFAULT_REGION=<YOUR_REGION>
 
 # Update and install required packages for Terraform
+# This will install the latest version of Terraform available in the Alpine Linux package repository
 RUN apk update && \
     apk add --no-cache curl gnupg vim sudo zip && \
     curl -fsSL https://apt.releases.hashicorp.com/gpg | gpg --import - && \
     apk del gnupg && \
-    apk add --no-cache --virtual .build-deps \
-        bash \
-        && \
-    apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
-        terraform \
-        && \
-    apk del .build-deps
+    apk add --no-cache --virtual bash && \
+    apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community terraform
 
 # install AWS CLI using pip, other methods didn't work
 RUN apk add --update \
@@ -31,6 +27,10 @@ ENV PATH="/root/.local/bin:$PATH"
 # Set the working directory to /app
 WORKDIR /app
 
-# Define the command to run when the container starts
-CMD ["sh", "-c", "echo 'Remember: It is very important to run 'terraform destroy' before exiting the container instance to ensure the Terraform state is not lost.!' && echo '' && terraform --version && echo '' && aws --version && /bin/sh"]
+# Uncomment and specify the Terraform scripts to run for example
+# COPY main.tf /app
 
+# Define the command to run when the container starts
+COPY entrypoint.sh /entrypoint.sh
+
+CMD ["/bin/sh", "/entrypoint.sh"]
