@@ -17,7 +17,7 @@ To use:
 
 - Clone the repository
 
-- Create two GitHub Action respository secrets ```DOCKERHUB_USERNAME``` & ```DOCKERHUB_PASSWORD```
+- Create two GitHub Action repository secrets ```DOCKERHUB_USERNAME``` & ```DOCKERHUB_PASSWORD```
 
 - Add your Terraform scripts to repository
 
