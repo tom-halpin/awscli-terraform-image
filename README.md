@@ -1,6 +1,6 @@
 # awscli-terraform-image - README.md
 
-This is a repository for a Docker image with the the AWS Command Line Interface (CLI) and Terraform installed.
+This is a repository for a Docker image with the the AWS Command Line Interface (CLI) and latest version of Terraform available in the Alpine Linux package repository installed.
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Bandit](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/bandit.yml/badge.svg)](https://github.com/tom-halpin/awscli-terraform-image/actions/new?category=security)
