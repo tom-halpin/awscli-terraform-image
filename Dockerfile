@@ -1,6 +1,9 @@
 # Start from an Alpine Linux base image
 FROM alpine:latest
 
+LABEL maintainer=“tom_halpin@hotmail.com”
+LABEL description="Image with the AWS Command Line Interface (CLI) and latest version of Terraform available in the Alpine Linux package repository installed."
+
 # Environment variables for AWS credentials which need to be set ideally outside the Dockerfile
 # ENV AWS_ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID>
 # ENV AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
@@ -9,7 +12,7 @@ FROM alpine:latest
 # Update and install required packages for Terraform
 # This will install the latest version of Terraform available in the Alpine Linux package repository
 RUN apk update && \
-    apk add --no-cache curl gnupg vim sudo zip && \
+    apk add --no-cache curl gnupg vim sudo zip git && \
     curl -fsSL https://apt.releases.hashicorp.com/gpg | gpg --import - && \
     apk del gnupg && \
     apk add --no-cache --virtual bash && \

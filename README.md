@@ -1,6 +1,6 @@
 # awscli-terraform-image - README.md
 
-This is a repository for a Docker image with the the AWS Command Line Interface (CLI) and latest version of Terraform available in the Alpine Linux package repository installed.
+This is a repository for a Docker image with the AWS Command Line Interface (CLI) and latest version of Terraform available in the Alpine Linux package repository installed.
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Bandit](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/bandit.yml/badge.svg)](https://github.com/tom-halpin/awscli-terraform-image/actions/new?category=security)
@@ -8,6 +8,7 @@ This is a repository for a Docker image with the the AWS Command Line Interface 
 [![Markdown Links Check](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/md-links.yml/badge.svg)](https://github.com/gaurav-nelson/github-action-markdown-link-check)
 [![Spell-Checker](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/spellcheck.yaml/badge.svg)](https://github.com/rojopolis/spellcheck-github-actions)
 [![Docker-Build-Push](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/docker-build-push.yml/badge.svg)](https://hub.docker.com/)
+[![Docker-Push-README](https://github.com/tom-halpin/awscli-terraform-image/actions/workflows/docker-push-readme.yml/badge.svg)](https://hub.docker.com/)
 
 In summary, this Dockerfile starts with the latest Alpine base image, installs the required packages for Terraform & the awscli, installs Terraform and the awscli and then sets the working directory to /app.
 
