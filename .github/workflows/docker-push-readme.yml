@@ -18,7 +18,7 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKER_PASS: ${{ secrets.DOCKERHUB_PASSWORD }}
         with:
-          destination_container_repo: tom-halpin/awscli-terraform-image
+          destination_container_repo: tomhalpin/awscli-terraform-image
           provider: dockerhub
           short_description: 'Image with AWS CLI and latest version of Terraform installed.'
           readme_file: 'README.md'
